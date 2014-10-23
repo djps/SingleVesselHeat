@@ -1,23 +1,3 @@
-/***************************************************************************
- *   Copyright (C) 2009 by Simon Woodford                                  *
- *   simon.woodford@icr.ac.uk                                              *
- *                                                                         *
- *   This program is free software; you can redistribute it and/or modify  *
- *   it under the terms of the GNU General Public License as published by  *
- *   the Free Software Foundation; either version 2 of the License, or     *
- *   (at your option) any later version.                                   *
- *                                                                         *
- *   This program is distributed in the hope that it will be useful,       *
- *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
- *   GNU General Public License for more details.                          *
- *                                                                         *
- *   You should have received a copy of the GNU General Public License     *
- *   along with this program; if not, write to the                         *
- *   Free Software Foundation, Inc.,                                       *
- *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
- ***************************************************************************/
-
 #include "generator.h"
 #include <cstdlib> 
 #include <stdio.h>
@@ -110,17 +90,6 @@ int no_of_pars, double *pars)
 	{ 
 	// default is zero.
 	memset(temperature.array, 0, nx*ny*nz*sizeof(double));
-    /*double tempmax = 0.0; 
-    for (int x = 0; x<nx; ++x){
-        for (int y = 0; y<ny; ++y){
-            for (int z = 0; z<nz; ++z) {                 
-                temperature.Input_Value(x,y,z,tempmax);              
-            }
-        
-        }
-        
-    }
-    */
 	}               
 }
 
