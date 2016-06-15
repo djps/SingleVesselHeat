@@ -30,10 +30,10 @@ void GenerateTemperature(Array3D<double> &temperature, std::string &restartFileN
 /** \brief Subroutine generating temperature */
 /**
 	\param nx an integer argument.
-    \param ny an integer argument.
+	\param ny an integer argument.
 	\param nz an integer argument.
 	\param dx an integer argument.
-    \param dy an integer argument.
+	\param dy an integer argument.
 	\param dz an integer argument.
 	\param temperature Array3D double
 	\param no_of_pars an integer argument.
@@ -47,15 +47,15 @@ int no_of_pars, double *pars);
 /** \brief Subroutine generating heating profile */
 /**
 	\param nx an integer argument.
-    \param ny an integer argument.
+    	\param ny an integer argument.
 	\param nz an integer argument.
 	\param dx an integer argument.
-    \param dy an integer argument.
+	\param dy an integer argument.
 	\param dz an integer argument.
 	\param heating Array3D double.
 	\param heat_vel_pars an integer argument.
 	\param heat_pars an double pointer.
-    \param num_vel_pars an integer argument.
+    	\param num_vel_pars an integer argument.
 	\param vel_pars an double pointer.
 	\param heatFileName a constant character
 	\return The test results.
