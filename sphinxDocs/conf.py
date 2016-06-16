@@ -20,8 +20,6 @@ import os
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #sys.path.insert(0, os.path.abspath('.'))
 
-sys.path.append("/home/ds12/breathe")
-
 # -- General configuration ------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
@@ -54,7 +52,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Heat'
+project = u'SingleVesselHeat'
 copyright = u'2016, David Sinden'
 
 # The version info for the project you're documenting, acts as replacement for
