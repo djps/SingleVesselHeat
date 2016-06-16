@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Array3D &mdash; Heat beta documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     'beta',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Heat beta documentation" href="index.html" />
+    <link rel="next" title="generator" href="generator.html" />
+    <link rel="prev" title="Velocity" href="Velocity.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="generator.html" title="generator"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="Velocity.html" title="Velocity"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Heat beta documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="array3d">
+<h1>Array3D<a class="headerlink" href="#array3d" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt>
+<span class="target" id="Heatclass_array3_d"></span><em class="property">template </em>&lt;class <em>T</em>&gt;</dt>
+<dt id="Array3D">
+<em class="property">class </em><tt class="descname">Array3D</tt><a class="headerlink" href="#Array3D" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a class for handling 3d arrays. </p>
+<p>This is an implementation of a 3-d array. The idea is that if we solve the heat equation in a ADI FD method, we get tridiagonal matrices. However, if we force the 3-d array into a 1-d array, then we no longer have true tridiagonal matrices because everything gets mixed up. So we need to implement fancy tridiag multiplication schemes and solvers that know about this internal trouble. Should be relatively easy, although a pain to parallelize.</p>
+<p><dl class="docutils">
+<dt><strong>Author</strong></dt>
+<dd>Simon Woodford <a class="reference external" href="mailto:simon&#46;woodford&#37;&#52;&#48;icr&#46;ac&#46;uk">simon<span>&#46;</span>woodford<span>&#64;</span>icr<span>&#46;</span>ac<span>&#46;</span>uk</a> </dd>
+</dl>
+</p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="Array3D::Array3D">
+<span class="target" id="Heatclass_array3_d_1a38d85351fed44fda02b3e04ff54bdfa8"></span> <tt class="descname">Array3D</tt><big>(</big><big>)</big><a class="headerlink" href="#Array3D::Array3D" title="Permalink to this definition">¶</a></dt>
+<dd><p>constructor </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Array3D::~Array3D">
+<span class="target" id="Heatclass_array3_d_1a463dfa6eabb4b2072dee6b70faad2f56"></span> <tt class="descname">~Array3D</tt><big>(</big><big>)</big><a class="headerlink" href="#Array3D::~Array3D" title="Permalink to this definition">¶</a></dt>
+<dd><p>deconstructor </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Array3D::resize__l.l.l">
+<span class="target" id="Heatclass_array3_d_1a9c37c20687ec51aedb7f87c83300d630"></span> <tt class="descname">resize</tt><big>(</big>long <em>nx_in</em>, long <em>ny_in</em>, long <em>nz_in</em><big>)</big><a class="headerlink" href="#Array3D::resize__l.l.l" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resizes the current array. <dl class="docutils">
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last">
+<li><tt class="first docutils literal"><span class="pre">nx_in</span></tt> - <p>x-value </p>
+</li>
+<li><tt class="first docutils literal"><span class="pre">ny_in</span></tt> - <p>y-value </p>
+</li>
+<li><tt class="first docutils literal"><span class="pre">nz_in</span></tt> - <p>z-value </p>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Array3D::TriDiagMultiply__TP.TP.TP.i.i.i.i">
+<span class="target" id="Heatclass_array3_d_1a1aa9a62d09154e9280aca7d067e620f0"></span> <tt class="descname">TriDiagMultiply</tt><big>(</big>T* <em>a</em>, T* <em>b</em>, T* <em>c</em>, int <em>Index</em>, int <em>N</em>, int <em>index1</em>, int <em>index2</em><big>)</big><a class="headerlink" href="#Array3D::TriDiagMultiply__TP.TP.TP.i.i.i.i" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Nontraditional matrix multiply in the sense that we can choose which index to multiply along. That is, we calculate M_ij T_klj or M_ij T_kjl or M_ij T_jkl, depending on the index chosen.</p>
+<p>Note that a is the vector below the main diagonal, b is the diagonal, c is the vector above the main diagonal. All three are assumed to have length N, so a[0] = 0 and c[N-1] = 0 by assumption. The result of this multiplication is written over array.</p>
+<p>Note that Index is either 1 (x), 2 (y) or 3 (z) and N must correspond to the appropriate number of elements. Otherwise an error is returned. This allows easy testing - just make nx,ny,nz different. } </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="Array3D::TriDiagSolve__TP.TP.TP.i.i.i.i">
+<span class="target" id="Heatclass_array3_d_1a7ec88b1b8afd2e7df8fc194d771739d2"></span> <tt class="descname">TriDiagSolve</tt><big>(</big>T* <em>a</em>, T* <em>b</em>, T* <em>c</em>, int <em>Index</em>, int <em>N</em>, int <em>index1</em>, int <em>index2</em><big>)</big><a class="headerlink" href="#Array3D::TriDiagSolve__TP.TP.TP.i.i.i.i" title="Permalink to this definition">¶</a></dt>
+<dd><p>{Now, solve a tridiagonal system. Again, a,b,c are the sub, main and superdiagonals, Index is 1, 2 or 3 and N is the appropriate number of elements. Depending on the index, we are either solving M_ij x_klj = d_kli, M_ij x_kjl = d_kil or M_ij x_jkl = d_ikl. At the call of this function, array contains the right-hand-side d. After the call, array contains the solution x. Some of the input vectors are overwritten. Sorry about this.</p>
+<p>Also note that we feed in two other indices. These are the values of the indices that do not take part in the matrix equation.</p>
+<p>THIS ROUTINE ONLY SOLVES THE MATRIX EQUATION FOR A SINGLE SET OF THESE OTHER INDICES!!! IT DOES NOT SOLVE IT FOR ALL INDICES AND IT WIPES OUT THE VALUES OF THE INPUT VECTORS.</p>
+<p>The reason for this is that the inhomogeneous heat equation does not break up nicely into independent 1-d problems. If it did, then each matrix inversion would be independent of the uninvolved indices. But it doesn&#8217;t and the matrix inversion depends on these indices. } </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="Velocity.html"
+                        title="previous chapter">Velocity</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="generator.html"
+                        title="next chapter">generator</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/Array3D.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="generator.html" title="generator"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="Velocity.html" title="Velocity"
+             >previous</a> |</li>
+        <li><a href="index.html">Heat beta documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+Nutshell module
+===============
+
+.. doxygenclass:: Nutshell
+	:project: Demo
+	:members:

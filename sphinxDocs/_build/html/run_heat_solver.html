@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>run_heat_solver &mdash; Heat beta documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     'beta',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Heat beta documentation" href="index.html" />
+    <link rel="next" title="Velocity" href="Velocity.html" />
+    <link rel="prev" title="Conductivity" href="conductivity.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="Velocity.html" title="Velocity"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="conductivity.html" title="Conductivity"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Heat beta documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="run-heat-solver">
+<h1>run_heat_solver<a class="headerlink" href="#run-heat-solver" title="Permalink to this headline">¶</a></h1>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="function">
+<dt id="run_heat_solver__iR.iR.iR.iR.doubleR.doubleR.doubleR.doubleR.doubleR.iR.conductivityR.conductivityR.VelocityR.Array3D:double:R.Array3D:double:R.i.doubleP.Array3D:double:R.doubleP.doubleP.doubleP.doubleP.doubleP.iR.doubleP.doubleCR">
+<span class="target" id="Heatrun__heat__solver_8cpp_1adecc7d57f5426c57c041a896b80e3467"></span>void <tt class="descname">run_heat_solver</tt><big>(</big>int&amp; <em>nmax</em>, int&amp; <em>nx</em>, int&amp; <em>ny</em>, int&amp; <em>nz</em>, double&amp; <em>dx</em>, double&amp; <em>dy</em>, double&amp; <em>dz</em>, double&amp; <em>dt</em>, double&amp; <em>time</em>, int&amp; <em>iterations</em>, conductivity&amp; <em>kappa</em>, conductivity&amp; <em>diff</em>, Velocity&amp; <em>velocity</em>, Array3D&lt;double&gt;&amp; <em>temperature</em>, Array3D&lt;double&gt;&amp; <em>heating</em>, int <em>num_heat_pars</em>, double* <em>heat_pars</em>, Array3D&lt;double&gt;&amp; <em>therm_dose</em>, double* <em>a</em>, double* <em>b</em>, double* <em>c</em>, double* <em>d</em>, double* <em>centralpoint</em>, int&amp; <em>numoftimesteps</em>, double* <em>timevec</em>, double const&amp; <em>perf</em><big>)</big><a class="headerlink" href="#run_heat_solver__iR.iR.iR.iR.doubleR.doubleR.doubleR.doubleR.doubleR.iR.conductivityR.conductivityR.VelocityR.Array3D:double:R.Array3D:double:R.i.doubleP.Array3D:double:R.doubleP.doubleP.doubleP.doubleP.doubleP.iR.doubleP.doubleCR" title="Permalink to this definition">¶</a></dt>
+<dd><p>subroutine which runs the heat solver </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="AddToThermalDose__Array3D:double:CR.Array3D:double:R.double">
+<span class="target" id="Heatrun__heat__solver_8cpp_1ab085d2a8392849f719807aaf70afd08d"></span>void <tt class="descname">AddToThermalDose</tt><big>(</big>Array3D&lt;double&gt; const&amp; <em>temperature</em>, Array3D&lt;double&gt;&amp; <em>therm_dose</em>, double <em>step</em><big>)</big><a class="headerlink" href="#AddToThermalDose__Array3D:double:CR.Array3D:double:R.double" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="AddToIntegratedTemp__Array3D:double:CR.Array3D:double:R.double">
+<span class="target" id="Heatrun__heat__solver_8cpp_1ac85d7251098bda891d2c5e3559e97fbe"></span>void <tt class="descname">AddToIntegratedTemp</tt><big>(</big>Array3D&lt;double&gt; const&amp; <em>temperature</em>, Array3D&lt;double&gt;&amp; <em>int_temp</em>, double <em>step</em><big>)</big><a class="headerlink" href="#AddToIntegratedTemp__Array3D:double:CR.Array3D:double:R.double" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="DamagedIfExceeds56Degrees__Array3D:double:CR.Array3D:double:R.double">
+<span class="target" id="Heatrun__heat__solver_8cpp_1a13fe2580d09145b0986f668f81324107"></span>void <tt class="descname">DamagedIfExceeds56Degrees</tt><big>(</big>Array3D&lt;double&gt; const&amp; <em>temperature</em>, Array3D&lt;double&gt;&amp; <em>damaged_tissue</em>, double <em>step</em><big>)</big><a class="headerlink" href="#DamagedIfExceeds56Degrees__Array3D:double:CR.Array3D:double:R.double" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="SwitchOffIfTemperatureExceedsThreshold__Array3D:double:CR.Array3D:double:R.double.double">
+<span class="target" id="Heatrun__heat__solver_8cpp_1a3aaa4de7baeb5433e0688f5d74967017"></span>void <tt class="descname">SwitchOffIfTemperatureExceedsThreshold</tt><big>(</big>Array3D&lt;double&gt; const&amp; <em>temperature</em>, Array3D&lt;double&gt;&amp; <em>heating</em>, double <em>cutoff</em>, double <em>time</em><big>)</big><a class="headerlink" href="#SwitchOffIfTemperatureExceedsThreshold__Array3D:double:CR.Array3D:double:R.double.double" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="conductivity.html"
+                        title="previous chapter">Conductivity</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="Velocity.html"
+                        title="next chapter">Velocity</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/run_heat_solver.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="Velocity.html" title="Velocity"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="conductivity.html" title="Conductivity"
+             >previous</a> |</li>
+        <li><a href="index.html">Heat beta documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

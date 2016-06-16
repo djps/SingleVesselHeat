@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>generator &mdash; Heat beta documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     'beta',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Heat beta documentation" href="index.html" />
+    <link rel="prev" title="Array3D" href="Array3D.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="Array3D.html" title="Array3D"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Heat beta documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="generator">
+<h1>generator<a class="headerlink" href="#generator" title="Permalink to this headline">¶</a></h1>
+<p>Subroutine generating temperature from a given temperate profile. (cpp) </p>
+<p>These are the functions that generate all the input data for you. In the future, I&#8217;ll probably pass in file names and parameters but for now it&#8217;s just a pretty straightforward setup. (.cpp) </p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="function">
+<dt id="GenerateTemperature__Array3D:double:R.ssR">
+<span class="target" id="Heatgenerator_8cpp_1a36edcdfad27bd545cee6433976bdc5a7"></span>void <tt class="descname">GenerateTemperature</tt><big>(</big>Array3D&lt;double&gt;&amp; <em>temperature</em>, std::string&amp; <em>restartFileName</em><big>)</big><a class="headerlink" href="#GenerateTemperature__Array3D:double:R.ssR" title="Permalink to this definition">¶</a></dt>
+<dd><p>subroutine which generates an initial temperature profile from a file (.cpp) </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="GenerateTemperature__i.i.i.double.double.double.Array3D:double:R.i.doubleP">
+<span class="target" id="Heatgenerator_8cpp_1aec217022aaa6e92de2af31ee25126906"></span>void <tt class="descname">GenerateTemperature</tt><big>(</big>int <em>nx</em>, int <em>ny</em>, int <em>nz</em>, double <em>dx</em>, double <em>dy</em>, double <em>dz</em>, Array3D&lt;double&gt;&amp; <em>temperature</em>, int <em>no_of_pars</em>, double* <em>pars</em><big>)</big><a class="headerlink" href="#GenerateTemperature__i.i.i.double.double.double.Array3D:double:R.i.doubleP" title="Permalink to this definition">¶</a></dt>
+<dd><p>subroutine which generates an initial temperature profile from analytical expression (.cpp) </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="GenerateHeating__i.i.i.double.double.double.Array3D:double:R.i.doubleP.i.doubleP.ssR">
+<span class="target" id="Heatgenerator_8cpp_1a423f3d276110c7d6c5f37b0ad5a49e40"></span>void <tt class="descname">GenerateHeating</tt><big>(</big>int <em>nx</em>, int <em>ny</em>, int <em>nz</em>, double <em>dx</em>, double <em>dy</em>, double <em>dz</em>, Array3D&lt;double&gt;&amp; <em>heating</em>, int <em>num_heat_pars</em>, double* <em>heat_pars</em>, int <em>num_vel_pars</em>, double* <em>vel_pars</em>, std::string&amp; <em>heatFileName</em><big>)</big><a class="headerlink" href="#GenerateHeating__i.i.i.double.double.double.Array3D:double:R.i.doubleP.i.doubleP.ssR" title="Permalink to this definition">¶</a></dt>
+<dd><p>subroutine which generates heat source from file (.cpp)</p>
+<p>detail: In this routine, I load up the heating profile from the file heatFileName (stored as text file, with nx, ny, nz, maxValue as header, then x,y,z,heat, with x,y,z integers &gt;= 0 and &lt; nx,ny,nz). Heating_parameters also has a value that is the maximum heat deposition value to which we must rescale the acoustic profile. We also reduce absorption over the blood vessel. Finally, heating_parameters will also have 4 more parameters, two to determine when it starts switching on and how long until it&#8217;s going, and another two to switch it off. But these aren&#8217;t used in this routine. So num_heat_pars should be 5, but we only use 1. (.cpp) </p>
+</dd></dl>
+
+</div>
+<p>Subroutine generating temperature from a given temperate profile. </p>
+<p>These are the functions that generate all the input data for you. In the future, I&#8217;ll probably pass in file names and parameters but for now it&#8217;s just a pretty straightforward setup. </p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="function">
+<dt>
+<span class="target" id="Heatgenerator_8h_1a36edcdfad27bd545cee6433976bdc5a7"></span>void <tt class="descname">GenerateTemperature</tt><big>(</big>Array3D&lt;double&gt;&amp; <em>temperature</em>, std::string&amp; <em>restartFileName</em><big>)</big></dt>
+<dd><p>subroutine which generates an initial temperature profile from a file (.cpp) </p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<span class="target" id="Heatgenerator_8h_1aec217022aaa6e92de2af31ee25126906"></span>void <tt class="descname">GenerateTemperature</tt><big>(</big>int <em>nx</em>, int <em>ny</em>, int <em>nz</em>, double <em>dx</em>, double <em>dy</em>, double <em>dz</em>, Array3D&lt;double&gt;&amp; <em>temperature</em>, int <em>no_of_pars</em>, double* <em>pars</em><big>)</big></dt>
+<dd><p>subroutine which generates an initial temperature profile from analytical expression (.cpp) </p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<span class="target" id="Heatgenerator_8h_1a423f3d276110c7d6c5f37b0ad5a49e40"></span>void <tt class="descname">GenerateHeating</tt><big>(</big>int <em>nx</em>, int <em>ny</em>, int <em>nz</em>, double <em>dx</em>, double <em>dy</em>, double <em>dz</em>, Array3D&lt;double&gt;&amp; <em>heating</em>, int <em>num_heat_pars</em>, double* <em>heat_pars</em>, int <em>num_vel_pars</em>, double* <em>vel_pars</em>, std::string&amp; <em>heatFileName</em><big>)</big></dt>
+<dd><p>subroutine which generates heat source from file (.cpp)</p>
+<p>detail: In this routine, I load up the heating profile from the file heatFileName (stored as text file, with nx, ny, nz, maxValue as header, then x,y,z,heat, with x,y,z integers &gt;= 0 and &lt; nx,ny,nz). Heating_parameters also has a value that is the maximum heat deposition value to which we must rescale the acoustic profile. We also reduce absorption over the blood vessel. Finally, heating_parameters will also have 4 more parameters, two to determine when it starts switching on and how long until it&#8217;s going, and another two to switch it off. But these aren&#8217;t used in this routine. So num_heat_pars should be 5, but we only use 1. (.cpp) </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Variables</p>
+<dl class="member">
+<dt id="ABSORPTION_OF_BLOOD__doubleC">
+<span class="target" id="Heatgenerator_8h_1af28788a6a863e81dabc613f0825f8b38"></span>const double <tt class="descname">ABSORPTION_OF_BLOOD</tt><a class="headerlink" href="#ABSORPTION_OF_BLOOD__doubleC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="Array3D.html"
+                        title="previous chapter">Array3D</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/generator.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="Array3D.html" title="Array3D"
+             >previous</a> |</li>
+        <li><a href="index.html">Heat beta documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

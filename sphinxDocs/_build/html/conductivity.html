@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Conductivity &mdash; Heat beta documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     'beta',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Heat beta documentation" href="index.html" />
+    <link rel="next" title="run_heat_solver" href="run_heat_solver.html" />
+    <link rel="prev" title="Welcome to Heat’s documentation!" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="run_heat_solver.html" title="run_heat_solver"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to Heat’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Heat beta documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="conductivity">
+<h1>Conductivity<a class="headerlink" href="#conductivity" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt>
+<span class="target" id="Heatclassconductivity"></span><em class="property">class </em><tt class="descname">conductivity</tt></dt>
+<dd><p>This is a conductivity class. </p>
+<div class="breathe-sectiondef container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="conductivity::conductivity">
+<span class="target" id="Heatclassconductivity_1a7184ddcd676bf52bea0c18311b6f50e2"></span> <tt class="descname">conductivity</tt><big>(</big><big>)</big><a class="headerlink" href="#conductivity::conductivity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructor </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="conductivity::conductivity__i.i.i.double.double.double.i.doubleP">
+<span class="target" id="Heatclassconductivity_1ab28a093803c5664b632cd4888a03bfa4"></span> <tt class="descname">conductivity</tt><big>(</big>int <em>nx</em>, int <em>ny</em>, int <em>nz</em>, double <em>dx</em>, double <em>dy</em>, double <em>dz</em>, int <em>number_of_conductivity_parameters</em>, double* <em>conductivity_parameters</em><big>)</big><a class="headerlink" href="#conductivity::conductivity__i.i.i.double.double.double.i.doubleP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructor of conductivity class </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="conductivity::~conductivity">
+<span class="target" id="Heatclassconductivity_1af78e3801c2f7ecfc98752981a294c08a"></span> <tt class="descname">~conductivity</tt><big>(</big><big>)</big><a class="headerlink" href="#conductivity::~conductivity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deconstructor of conductivity class </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="conductivity::GenerateConductivity__i.doubleP">
+<span class="target" id="Heatclassconductivity_1a002dea5634cc923da7e7619fef6d9835"></span>void <tt class="descname">GenerateConductivity</tt><big>(</big>int <em>number_of_conductivity_parameters</em>, double* <em>conductivity_parameters</em><big>)</big><a class="headerlink" href="#conductivity::GenerateConductivity__i.doubleP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subroutine which generates conductivity </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="conductivity::OutputIndex__i.i.i.i">
+<span class="target" id="Heatclassconductivity_1aa4a9e376e2d3170ae0fe44974bb39047"></span>int <tt class="descname">OutputIndex</tt><big>(</big>int <em>count</em>, int <em>ind1</em>, int <em>ind2</em>, int <em>option</em><big>)</big><a class="headerlink" href="#conductivity::OutputIndex__i.i.i.i" title="Permalink to this definition">¶</a></dt>
+<dd><p>Outputs int, index conductivity in specific direction </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="conductivity::OutputCond__i.i.i.i">
+<span class="target" id="Heatclassconductivity_1a05ec54ec039aa41653f5b19124e14220"></span>double <tt class="descname">OutputCond</tt><big>(</big>int <em>count</em>, int <em>ind1</em>, int <em>ind2</em>, int <em>option</em><big>)</big><a class="headerlink" href="#conductivity::OutputCond__i.i.i.i" title="Permalink to this definition">¶</a></dt>
+<dd><p>Outputs double of conductivity in specific direction </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="conductivity::OutputDist__i.i.i.i">
+<span class="target" id="Heatclassconductivity_1a9c677dc59773c244e1252e55feed691a"></span>double <tt class="descname">OutputDist</tt><big>(</big>int <em>count</em>, int <em>ind1</em>, int <em>ind2</em>, int <em>option</em><big>)</big><a class="headerlink" href="#conductivity::OutputDist__i.i.i.i" title="Permalink to this definition">¶</a></dt>
+<dd><p>Outputs double of dist conductivity in specific direction </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to Heat&#8217;s documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="run_heat_solver.html"
+                        title="next chapter">run_heat_solver</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/conductivity.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="run_heat_solver.html" title="run_heat_solver"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to Heat’s documentation!"
+             >previous</a> |</li>
+        <li><a href="index.html">Heat beta documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>
