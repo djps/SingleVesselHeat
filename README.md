@@ -1,6 +1,7 @@
 SingleVesselHeat
 ================
 
+[![Documentation badge](https://readthedocs.org/projects/singlevesselheat/badge/?version=latest)]  (http://singlevesselheat.readthedocs.org/en/latest/)
 [![Documentation badge](https://readthedocs.org/projects/singlevesselheat/badge/?version=master)]  (http://singlevesselheat.readthedocs.org/en/master/)
 
 This is a work in progress!
