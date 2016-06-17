@@ -38,7 +38,7 @@ extensions = [
 ]
 
 # Breathe extension variables
-breathe_projects = { "SingleVesselHeat": "doxyxml/" }
+breathe_projects = { "SingleVesselHeat": "../doxyDocs/doxyxml/" }
 breathe_default_project = "SingleVesselHeat"
 
 # Add any paths that contain templates here, relative to this directory.
