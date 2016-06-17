@@ -2,5 +2,5 @@ Velocity
 ========
 
 .. doxygenclass:: Velocity
-	:project: Heat
+	:project: SingleVesselHeat
 	:members:
