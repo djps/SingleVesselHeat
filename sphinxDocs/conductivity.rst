@@ -2,5 +2,5 @@ Conductivity
 ============
 
 .. doxygenclass:: conductivity
-	:project: Heat
+	:project: SingleVesselHeat
 	:members:
