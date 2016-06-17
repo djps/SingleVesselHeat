@@ -2,7 +2,7 @@ generator
 =========
 	
 .. doxygenfile:: generator.cpp
-	:project: Heat
+	:project: SingleVesselHeat
 	
 .. doxygenfile:: generator.h
-	:project: Heat
+	:project: SingleVesselHeat
