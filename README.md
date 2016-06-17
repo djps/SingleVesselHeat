@@ -3,18 +3,29 @@ SingleVesselHeat
 
 [![Documentation badge](https://readthedocs.org/projects/singlevesselheat/badge/?version=master)]  (http://singlevesselheat.readthedocs.org/en/master/)
 
-** Under Construction **
+This is a work in progress!
 
 Finite-difference time-domain code using operator splitting to solve coupled (Hagen-Poiseuille) flow and heat equations when exposed to high-intensity focused ultrasound. 
 
-Download
---------
-Downloads can be found [here](http://djps.github.io/SingleVesselHeat/)
+Getting Code
+------------
+Code can be downloaded from [here](http://djps.github.io/SingleVesselHeat/)
+
+Installation
+------------
+
+Using a makefile or via CMake.
 
 Documentation
 -------------
 
 Documentation can be found [here](http://singlevesselheat.readthedocs.io/en/master/)
+
+Useful Links
+------------
+
+* Vascular Modelling: 
+  * [vmtk](http://www.vmtk.org/) 
 
 References
 ----------
