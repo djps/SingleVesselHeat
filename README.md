@@ -1,7 +1,7 @@
 SingleVesselHeat
 ================
 
-|docs|
+[![Documentation badge](https://readthedocs.org/projects/singlevesselheat/badge/?version=latest)]  (http://singlevesselheat.readthedocs.org/en/latest/)
 
 ** Under Construction **
 
@@ -10,8 +10,3 @@ Finite-difference time-domain code using operator splitting to solve coupled (Ha
 Downloads can be found [here](http://djps.github.io/SingleVesselHeat/)
 
 Documentation can be found [here](http://singlevesselheat.readthedocs.io/en/master/)
-
-.. |docs| image:: https://readthedocs.org/projects/singlevesselheat/badge/?version=master
-    :alt: Documentation Status
-    :scale: 100%
-    :target: https://singlevesselheat.readthedocs.io/en/latest/?badge=master
