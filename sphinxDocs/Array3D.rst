@@ -2,5 +2,5 @@ Array3D
 =======
 
 .. doxygenclass:: Array3D
-	:project: Heat
+	:project: SingleVesselHeat
 	:members:
