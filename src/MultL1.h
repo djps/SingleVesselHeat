@@ -1,22 +1,3 @@
-/***************************************************************************
- *   Copyright (C) 2009 by Simon Woodford   *
- *   simon.woodford@icr.ac.uk   *
- *                                                                         *
- *   This program is free software; you can redistribute it and/or modify  *
- *   it under the terms of the GNU General Public License as published by  *
- *   the Free Software Foundation; either version 2 of the License, or     *
- *   (at your option) any later version.                                   *
- *                                                                         *
- *   This program is distributed in the hope that it will be useful,       *
- *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
- *   GNU General Public License for more details.                          *
- *                                                                         *
- *   You should have received a copy of the GNU General Public License     *
- *   along with this program; if not, write to the                         *
- *   Free Software Foundation, Inc.,                                       *
- *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
- ***************************************************************************/
 #ifndef MULT_L1
 #define MULT_L1
 
@@ -37,9 +18,9 @@ void multL1(int &nx, int &ny, int &nz, double &dx, double &dt,  conductivity &ka
     // double *c = new double[nx];
     double kap1;
     double kap2;
-	double diff1;
+    double diff1;
     double diff2;
-	double Halfdx_1 = 0.5/dx; // no point in dividing by 2dx every time!
+    double Halfdx_1 = 0.5/dx; // no point in dividing by 2dx every time!
     double dx_2 = 1.0/(dx*dx); // also useful.
     double HalfTau = 0.5*dt;
     int boundary1;
