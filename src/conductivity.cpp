@@ -61,12 +61,12 @@ conductivity::~conductivity()
   Computes the index of the cell in the mesh which is closest to the point query.
 
   \param[in] nx_in  Number of voxels in \f$x\f$ direction
-  \param[in] ny_in ( int )
-  \param[in] nz_in ( int )
-  \param[in] dx_in ( int )
-  \param[in] dy_in ( int )
-  \param[in] dz_in ( int )
-  \param[in] number_of_conductivity_parameters ( int )
+  \param[in] ny_in  Number of voxels in \f$y\f$ direction
+  \param[in] nz_in  Number of voxels in \f$z\f$ direction
+  \param[in] dx_in  Spacing in \f$x\f$ direction
+  \param[in] dy_in  Spacing in \f$y\f$ direction
+  \param[in] dz_in  Spacing in \f$z\f$ direction
+  \param[in] number_of_conductivity_parameters
   \param[in, out]   conductivity_parameters
   */
 conductivity::conductivity(int nx_in, int ny_in, int nz_in, double dx_in, double dy_in, \
