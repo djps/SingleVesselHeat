@@ -1,6 +1,8 @@
-Velocity
-========
+velocity
+=========
 
-.. doxygenclass:: Velocity
+.. doxygenfile:: velocity.cpp
 	:project: SingleVesselHeat
-	:members:
+
+.. doxygenfile:: velocity.h
+	:project: SingleVesselHeat
