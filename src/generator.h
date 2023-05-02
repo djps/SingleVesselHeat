@@ -20,6 +20,7 @@ straightforward setup.
 const double ABSORPTION_OF_BLOOD = 0.4;
 
 /**
+  \brief subroutine which generates an initial temperature profile from a file
   \param heating Array3D double.
   \param restartFileName a constant character.
   \return The test results.
@@ -27,8 +28,9 @@ const double ABSORPTION_OF_BLOOD = 0.4;
 */
 void GenerateTemperature(Array3D<double> &temperature, std::string &restartFileName);
 
-/** \brief Subroutine generating temperature */
+
 /**
+  \brief subroutine which generates an initial temperature profile from analytical expression
   \param nx an integer argument.
   \param ny an integer argument.
   \param nz an integer argument.
@@ -44,8 +46,9 @@ void GenerateTemperature(Array3D<double> &temperature, std::string &restartFileN
 void GenerateTemperature(int nx, int ny, int nz, double dx, double dy, double dz, Array3D<double> &temperature, \
 int no_of_pars, double *pars);
 
-/** \brief Subroutine generating heating profile */
+
 /**
+  \brief subroutine which generates heat source from file
   \param nx an integer argument.
   \param ny an integer argument.
   \param nz an integer argument.

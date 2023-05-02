@@ -6,7 +6,7 @@
 
 //#define DEBUG_GENERATOR
 
-//! subroutine which generates an initial temperature profile from a file
+
 void GenerateTemperature(Array3D<double> &temperature, std::string& restartFileName)
 {
   // note: This loads data from a file produced via save_to_file_binary. i.e.
@@ -35,7 +35,6 @@ void GenerateTemperature(Array3D<double> &temperature, std::string& restartFileN
 }
 
 
-//! subroutine which generates an initial temperature profile from analytical expression
 void GenerateTemperature(int nx, int ny, int nz, double dx, double dy, double dz, Array3D<double> &temperature, \
 int no_of_pars, double *pars)
 {
@@ -95,7 +94,7 @@ int no_of_pars, double *pars)
   }
 }
 
-//! subroutine which generates heat source from file
+
 void GenerateHeating(int nx, int ny, int nz, double dx, double dy, double dz, Array3D<double> &heating, \
 int num_heat_pars, double *heat_pars, int num_vel_pars, double *vel_pars, std::string &heatFileName)
 {
@@ -185,7 +184,7 @@ int num_heat_pars, double *heat_pars, int num_vel_pars, double *vel_pars, std::s
       {
         for (int z = 0; z < nz; ++z)
         {
-          heating.Input_Value(x, y, z, heat); 
+          heating.Input_Value(x, y, z, heat);
           // Since this is zero, don't need absorption.
         }
       }
