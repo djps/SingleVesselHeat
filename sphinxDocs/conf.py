@@ -19,9 +19,9 @@ import os
 # https://github.com/rtfd/readthedocs.org/issues/388
 on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 if on_rtd:
-  from subprocess import call 
+  from subprocess import call
   call('doxygen', shell=True)
-  
+
 # subprocess.call('cd ../; doxygen config.doxy', shell=True)
 
 # -- General configuration ------------------------------------------------
@@ -196,7 +196,7 @@ htmlhelp_basename = 'demodoc'
 
 latex_elements = {
 # The paper size ('letterpaper' or 'a4paper').
-#'papersize': 'letterpaper',
+'papersize': 'a4paper',
 
 # The font size ('10pt', '11pt' or '12pt').
 #'pointsize': '10pt',
@@ -277,7 +277,7 @@ texinfo_documents = [
 epub_title = u'demo'
 epub_author = u'Author'
 epub_publisher = u'Author'
-epub_copyright = u'2014, Author'
+epub_copyright = u'2023, Author'
 
 # The basename for the epub file. It defaults to the project name.
 #epub_basename = u'demo'
