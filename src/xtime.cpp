@@ -8,20 +8,26 @@ TTime::TTime()
 	gettimeofday(&tstart, NULL);
 	ts =tstart.tv_sec*1000 +(tstart.tv_usec/1000.0);
 }
+
+
 double TTime::start()
 {
 	gettimeofday(&tstart, NULL);
 	ts = tstart.tv_sec*1000 + (tstart.tv_usec/1000.0);
 	return ts;
 }
+
+
 double TTime::stop()
 {
   gettimeofday(&tstop, NULL);
-  tp = tstop.tv_sec*1000 +(tstop.tv_usec/1000.0);
+  tp = tstop.tv_sec*1000 + (tstop.tv_usec/1000.0);
   te = (tstop.tv_sec - tstart.tv_sec)*1000.0;
   te  +=  (tstop.tv_usec - tstart.tv_usec)/1000.0;
   return (te);
 }
+
+
 double TTime::elapsed()
 {
   return (te);
@@ -30,29 +36,33 @@ double TTime::elapsed()
 #else
 //Windows
 #include <windows.h>
+
 TTime::TTime()
 {
- // get ticks per second
-   QueryPerformanceFrequency(&frequency);
-// start timer
-   QueryPerformanceCounter(&t1);
+  // get ticks per second
+  QueryPerformanceFrequency(&frequency);
+  // start timer
+  QueryPerformanceCounter(&t1);
 }
+
 double TTime::start()
 {
-   QueryPerformanceCounter(&t1);
-   return  t1.QuadPart*1000/frequency.QuadPart;
+  QueryPerformanceCounter(&t1);
+  return  t1.QuadPart*1000/frequency.QuadPart;
 }
+
 double TTime::stop()
 {
-// stop timer
-   QueryPerformanceCounter(&t2);
- // compute and print the elapsed time in millisec
-   elapsedTime = (t2.QuadPart - t1.QuadPart) * 1000.0 / frequency.QuadPart;
-   return  elapsedTime;
+  // stop timer
+  QueryPerformanceCounter(&t2);
+  // compute and print the elapsed time in millisec
+  elapsedTime = (t2.QuadPart - t1.QuadPart) * 1000.0 / frequency.QuadPart;
+  return  elapsedTime;
 }
+
 double TTime::elapsed()
 {
-   return  elapsedTime;
+  return  elapsedTime;
 }
 
 #endif
@@ -64,8 +74,6 @@ double TTime::elapsed()
 
   time_t curtime;
 
-
-
   gettimeofday(&tv, NULL);
   curtime=tv.tv_sec;
 
@@ -73,8 +81,6 @@ double TTime::elapsed()
   printf("%s%ld\n",buffer,tv.tv_usec);
 
   return 0;
-
-
 
 }
 */

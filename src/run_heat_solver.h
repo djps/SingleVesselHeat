@@ -1,23 +1,3 @@
-/***************************************************************************
- *   Copyright (C) 2009 by Simon Woodford                                  *
- *   simon.woodford@icr.ac.uk                                              *
- *                                                                         *
- *   This program is free software; you can redistribute it and/or modify  *
- *   it under the terms of the GNU General Public License as published by  *
- *   the Free Software Foundation; either version 2 of the License, or     *
- *   (at your option) any later version.                                   *
- *                                                                         *
- *   This program is distributed in the hope that it will be useful,       *
- *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
- *   GNU General Public License for more details.                          *
- *                                                                         *
- *   You should have received a copy of the GNU General Public License     *
- *   along with this program; if not, write to the                         *
- *   Free Software Foundation, Inc.,                                       *
- *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
- ***************************************************************************/
-
 // This is a general runner routine.
 #ifndef RUN_HEAT_SOLVER
 #define RUN_HEAT_SOLVER
@@ -34,8 +14,6 @@ I'm encapsulating all the running steps in this file.
 
 // If BOUNDARY_TERM is 1, then we have zero temperature BCs. If it is 2, then we have insulating BCs.
 #define BOUNDARY_TERM  1.0
-
-
 
 // MAX_TEMPERATURE is the maximum allowable temperature at any point. Exceeding this leads to a cutoff of the heating.
 #define MAX_TEMPERATURE  50.0

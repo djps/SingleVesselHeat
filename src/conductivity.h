@@ -47,13 +47,13 @@ class conductivity{
 // The storage of this is rather straightforward.
 
 public:
-	// default constructor
+    // default constructor
     conductivity();
 
     int nr, nz;
     double dr, dz;
 
-	// note I must use pointers so that I can sensibly instantiate these arrays when I know nx, ny and nz.
+    // note I must use pointers so that I can sensibly instantiate these arrays when I know nx, ny and nz.
 
     Array3D<double> *cond_x, *distance_x;
 
@@ -65,14 +65,14 @@ public:
     Array3D<double> *cond_z, *distance_z;
     Array3D<int> *index_z;
 
-	// constructor
+    // constructor
     conductivity(int nr, int nz, double dr, double dz, int number_of_conductivity_parameters, double *conductivity_parameters);
 
-	int nx, ny;
-	double dx, dy;
-	conductivity(int nx, int ny, int nz, double dx, double dy,  double dz, int number_of_conductivity_parameters, double *conductivity_parameters);
+    int nx, ny;
+    double dx, dy;
+    conductivity(int nx, int ny, int nz, double dx, double dy,  double dz, int number_of_conductivity_parameters, double *conductivity_parameters);
 
-	// destructor
+    // destructor
     ~conductivity();
 
     void GenerateConductivity(int number_of_conductivity_parameters, double *conductivity_parameters);
@@ -81,8 +81,7 @@ public:
     double OutputCond(int count, int ind1, int ind2, int option);
     double OutputDist(int count, int ind1, int ind2, int option);
 
-
-	void Write(int ind1, int ind2, int option);
+    void Write(int ind1, int ind2, int option);
 
 };
 
