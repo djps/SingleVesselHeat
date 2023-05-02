@@ -31,7 +31,6 @@ Finally note that if consecutive indices denoting the position of the boundary
 are the same then this boundary is ignored completely. This allows an easy way
 to make the problem homogeneous.
 
-@author Simon Woodford <simon.woodford@icr.ac.uk>
 **/
 
 const int M = 4; // This determines the maximum number of jumps in any direction that the conductivity can have.
@@ -47,32 +46,37 @@ class conductivity{
 // The storage of this is rather straightforward.
 
 public:
+
     // default constructor
     conductivity();
 
-    int nr, nz;
-    double dr, dz;
+    int nr;
+    int nz;
+    double dr;
+    double dz;
 
     // note I must use pointers so that I can sensibly instantiate these arrays when I know nx, ny and nz.
 
-    Array3D<double> *cond_x, *distance_x;
-
+    Array3D<double> *cond_x;
+    Array3D<double> *distance_x;
     Array3D<int> *index_x;
 
-    Array3D<double> *cond_y, *distance_y;
+    Array3D<double> *cond_y;
+    Array3D<double> *distance_y;
     Array3D<int> *index_y;
 
-    Array3D<double> *cond_z, *distance_z;
+    Array3D<double> *cond_z;
+    Array3D<double> *distance_z;
     Array3D<int> *index_z;
 
-    // constructor
     conductivity(int nr, int nz, double dr, double dz, int number_of_conductivity_parameters, double *conductivity_parameters);
 
-    int nx, ny;
-    double dx, dy;
+    int nx;
+    int ny;
+    double dx;
+    double dy;
     conductivity(int nx, int ny, int nz, double dx, double dy,  double dz, int number_of_conductivity_parameters, double *conductivity_parameters);
 
-    // destructor
     ~conductivity();
 
     void GenerateConductivity(int number_of_conductivity_parameters, double *conductivity_parameters);

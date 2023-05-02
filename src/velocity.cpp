@@ -27,7 +27,7 @@ Velocity::Velocity()
 
 
 /**
- @brief destructor of velocity class
+ @brief Destructor of velocity class
  */
 Velocity::~Velocity()
 {
@@ -43,7 +43,7 @@ Velocity::~Velocity()
 
 
 /**
- @brief get initial velcoity
+ @brief Get initial velocity
  */
 void Velocity::initVelocity(int nx, int ny, int a_nz,  double dx, double dy, double a_dz, int a_numVelocityPars, double* a_velocityPars)
 {
@@ -128,7 +128,7 @@ void Velocity::initVelocity(int nx, int ny, int a_nz,  double dx, double dy, dou
 
 
 /**
- @brief evolve the velocity profile
+ @brief Evolve the velocity profile
  */
 void Velocity::evolveVelocity(Array3D<double> &temperature, double time)
 {
@@ -307,9 +307,9 @@ void nonGeneralTridiagonalSolver(double a, double b, double c, double d, double 
 
  This function uses a cubic spline to evolve the velocity for the small fractional part.
 
- The main part of it is done directly: that is, I assume that the n points in y are equidistantly spaced (spacing dx), and that I'm going to push all of them by an amount f*dx, where |f|<1. Because of these assumptions, this is much faster than the general cubic spline method from Numerical Recipes book.
+ The main part of it is done directly: that is, I assume that the\f$n\f$ points in \f$y\f$ are equidistantly spaced (spacing \f$dx\f$), and that I'm going to push all of them by an amount \f$f dx\f$, where \f$|f| < 1\f$. Because of these assumptions, this is much faster than the general cubic spline method from Numerical Recipes book.
 
- If f > 0 then things move to the right and therefore we have to do backwards interpolation (to find out where the new value comes from). f < 0 implies forward interpolation. Basically, we have to get data from upstream.
+ If \f$f > 0\f$ then things move to the right and therefore we have to do backwards interpolation (to find out where the new value comes from). \f$f < 0\f$ implies forward interpolation. Basically, we have to get data from upstream.
 
  There are many ways to solve the cspline problem, basically down to your choice of boundary conditions. These are implemented as preprocessor directives. Perhaps the most typical situation typical one is that the first derivative vanishes at the boundary, but I'm not sure.
 
